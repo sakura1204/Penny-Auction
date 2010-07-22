@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Home - eBidsNow</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="eBidsNow, Auction, Auctions, Electronics, Gift Cards, Shopping">
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/text.css" />
+		<link rel="stylesheet" href="css/960.css" />
+		<link rel="stylesheet" href="css/ebidsnow.css" />
+		<link rel="stylesheet" href="css/pagination.css" />
+		<!--[if IE 7]>
+			<link rel="stylesheet"  href="css/ebidsnow-ie.css" />
+		<![endif]-->
+		<!--[if lte IE 6]>
+			<link rel="stylesheet"  href="css/ebidsnow-ie6.css" />
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.pagination.js"></script>
+		
+		<script type="text/javascript">
+			var pagination_options = {
+				num_edge_entries: 2,
+				num_display_entries: 8,
+				callback: pageselectCallback,
+				items_per_page:9
+			}
+			function pageselectCallback(page_index, jq){
+				var items_per_page = pagination_options.items_per_page;
+				var offset = page_index * items_per_page;
+				var new_content = $('#hiddenresult div.result').slice(offset, offset + items_per_page).clone();
+				$('#Searchresult').empty().append(new_content);
+				return false;
+			}
+			function initPagination() {
+				var num_entries = $('#hiddenresult div.result').length;
+				// Create pagination element
+				$("#Pagination").pagination(num_entries, pagination_options);
+			}
+			// When document is ready, initialize pagination
+			$(document).ready(function(){      
+				initPagination();
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div class="container_12">
+			<div id="masthead" class="grid_12">
+				<div id="welcomeback" class="grid_12 alpha omega">
+					<p>Welcome back <a href="./edit_data?">bidone<? print $_SESSION['BPPENNYAUTOBID_LOGGED_IN_USERNAME']; ?></a>! Your balance is <a href="<?=$SETTINGS['siteurl']?>yourbalance.php">801<?= $TPL_balance?> bids</a>. <a href="javascript:changeLang("EN");"><img src="img/flags/us.png" width="16" height="11" alt="English" title="English" /></a></p>
+				</div>
+				<!-- end #welomeback .grid_12 alpha omega -->
+				<div id="rays" class="grid_7 alpha">
+					<h1 id="logo"><a href="<?=$SETTINGS['siteurl']?>">eBidsNow</a></h1>
+				</div>
+				<!-- end #rays .grid_7 alpha -->
+				<div id="buttons" class="grid_5 omega">
+					<a class="long controlpanel" href="<?=$SETTINGS['siteurl']?>user_menu.php?"></a>
+					<a class="short logout" href="<?=$SETTINGS['siteurl']?>logout.php"></a>
+					<ul id="mainmenu">
+						<li><a href="<?=$SETTINGS['siteurl']?>index.php?">Home<? print $MSG_501; ?></a></li>
+						<li><a href="<?=$SETTINGS['siteurl']?>contents.php?show=aboutus">About Us<?php echo $MSG_40_004 ?></a></li>
+						<li><a href="<?=$SETTINGS['siteurl']?>contents.php?show=howitworks">How It Works<?php echo $MSG_40_005 ?></a></li>
+						<li><a href="<?$SETTINGS['siteurl']?>contents.php?show=faq">Help<?php echo $MSG_164 ?></a></li>
+					</ul> <!-- end #mainmenu -->	
+				</div>
+				<!-- end #buttons .grid_5 omega -->
+			</div>
+			<!-- end #masthead .grid_12 -->
+			<div class="clear"></div>
+		
+			
+				<div id="auctions" class="grid_9">
+					<h2><span>Bid Now! These auctions end soon!</span></h2>
+
+					<div id="Pagination" class="grid_5 alpha"></div>
+
+					<div id="browse" class="grid_4 omega">
+						<form name="gobrowse" action="<?=$SETTINGS['siteurl']?>index.php" method="post">
+							<p>
+								Browse <? print $MSG_104; ?>
+								<select name="id">
+									<option value="">All Live Auctions</option>
+									<?php echo drawCategories(0,"",0,$category_id); ?>
+								</select>
+								<input type="submit" name="sub" value="Go!" title="Go!" class="btn_go" />
+							</p>
+						</form>
+					</div>
+					<div id="Searchresult">
+						This content will be replaced when pagination inits.
+					</div>
+					
+					<div class="item grid_3 alpha">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_0" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 alpha -->
+					<div class="item grid_3">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_1" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 -->
+					<div class="item grid_3 omega">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_2" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 omega -->
+					<div class="item grid_3 alpha">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_3" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 alpha -->
+					<div class="item grid_3">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_4" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 -->
+					<div class="item grid_3 omega">
+						<h3><a class="prodtitle" href=".$val["link_href"]." title=".$val["name"].">Seagate SATA 3TB</a></h3>
+						<a href=".$val["link_href"]."><img src="img/harddrive.jpg" width="180" height="127" alt="harddrive" title="harddrive" /></a>
+						<span class="auctiontag">&nbsp;</span>
+						<span id="el_5" class="timeleft">02:32:34</span>
+						<span class="retailprice">Retails:  $165.00</span>
+						<span class="next_bid_">$128.00</span>
+						<span class="winner_auction_">bidone</span>
+						<input type="submit" name="bid" value="BID" title="BID" class="image_btn_" />
+						<span class="buy_btn_"><a href="">$125.00</a></span>
+					</div>
+					<!-- end .item grid_3 omega -->
+				<!-- Replace <b> tag with appropriate tag on line 451 in template_index_php.html. -->
+				
+				</div>
+				<!-- end #auctions .grid_9 -->
+
+				<div id="winners" class="grid_3">
+					<h2 id="header_3grid">Latest Winners<?php print $MSG_204; ?></h2>
+					<?php print $TPL_closed_auctions_list; ?> <!-- can be found in index.php. look for 'newsfont' -->
+					<div id="winnerlist">
+						<div class="item">
+							<h3><a href="">Seagate SATA 3TB</a></h3>
+							<a href=\"item.php?id=" . $row['id'] . "\"  title='" . $row['title'] . "' ><img src="img/thumbs/harddrive.jpg" width="100" height="75" alt="harddrive" title="harddrive" /></a>
+							<p class="retailprice">Retails:  $165.00</p>
+							<p>Sold for only: <span>$128.00</span></p>
+							<p>Winner: <span>bidone</span></p>
+							<br />
+						</div>
+						<div class="item">
+							<h3>Seagate SATA 3TB<a href=\"item.php?id=" . $row['id'] . "\">" . $title . "</a></h3>
+							<a href=\"item.php?id=" . $row['id'] . "\"  title='" . $row['title'] . "' ><img src="img/thumbs/harddrive.jpg" width="100" height="75" alt="harddrive" title="harddrive" /></a>
+							<p>Sold for only: <span>$128.00</span></p>
+							<p>Winner: <span>bidone</span></p>
+							<br />
+						</div>
+						<div class="item">
+							<h3>Seagate SATA 3TB<a href=\"item.php?id=" . $row['id'] . "\">" . $title . "</a></h3>
+							<a href=\"item.php?id=" . $row['id'] . "\"  title='" . $row['title'] . "' ><img src="img/thumbs/harddrive.jpg" width="100" height="75" alt="harddrive" title="harddrive" /></a>
+							<p>Sold for only: <span>$128.00</span></p>
+							<p>Winner: <span>bidone</span></p>
+							<br />
+						</div>
+						<div class="item">
+						<h3>Seagate SATA 3TB<a href=\"item.php?id=" . $row['id'] . "\">" . $title . "</a></h3>
+						<a href=\"item.php?id=" . $row['id'] . "\"  title='" . $row['title'] . "' ><img src="img/thumbs/harddrive.jpg" width="100" height="75" alt="harddrive" title="harddrive" /></a>
+						<p>Sold for only: <span>$128.00</span></p>
+						<p>Winner: <span>bidone</span></p>
+						<br />
+					</div>
+					</div>
+					<!-- end #winnerlist -->
+				</div>
+				<!-- end #winners .grid_3 -->
+			
+			<div class="clear"></div>
+				
+			<div id="footer" class="grid_12">
+				<div class="footermenu grid_3 alpha">
+					<h3>About eBidsNow</h3>
+					<ul>
+						<li><a href="">Join Now for FREE!</a></li>
+						<li><a href="">How it Works</a></li>
+						<li><a href="">About Us</a></li>
+						<li><a href="">Terms &amp; Conditions</a></li>
+						<li><a href="">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<!-- end .footermenu grid_3 alpha -->
+				<div class="footermenu grid_3">
+					<h3>Other Information</h3>
+					<ul>
+						<li><a href="">Shipping</a></li>
+						<li><a href="">Refunds</a></li>
+						<li><a href="">Help</a></li>
+						<li><a href="">Login</a></li>
+					</ul>
+				</div>
+				<!-- end .footermenu grid_3 -->
+				<div class="footermenu grid_6 omega">
+					<h3>Security</h3>
+					<p>We gladly accept:</p>
+					<img src="img/payments.png" width="201" height="23" alt="Payments Accepted - Visa, Mastercard, American Express, Discover, PayPal" title="Payments Accepted - Visa, Mastercard, American Express, Discover, PayPal" />
+					<p id="copyright">&copy; 2010 eBidsNow &ndash; All Rights Reserved.</p>
+				</div>
+				<!-- end .footermenu grid_6 omega -->
+			</div>
+			<!-- end #footer .grid_12 -->
+			<div class="clear"></div>
+		</div>
+		<!-- end .container_12 -->
+	</body>
+</html>

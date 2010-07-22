@@ -1,0 +1,282 @@
+body {
+	background:#fff url(../img/bodybg.png) repeat-x 0 0;
+}
+
+/* =Masthead
+-------------------------*/
+#masthead {
+	background:transparent url(../img/mastheadbg.jpg) no-repeat 0 0;
+	height:200px;
+}
+	#welcomeback p {
+		background:transparent;
+		font:normal 14px/30px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#021129;
+		text-align:right;
+		margin-bottom:0px;
+		padding:0;
+	}
+		#welcomeback p a {
+			color:#3a5d94;
+			font-weight:bold;
+			text-decoration:none;
+		}
+		#welcomeback p a:hover {
+			text-decoration:none;
+			border-bottom:1px solid #3a5d94;
+		}	
+	#rays {
+		padding-top:14px;
+	}
+		#rays h1 a {
+			display:block;
+			background:transparent url(../img/logo.png) no-repeat 0 0;
+			width:210px;
+			height:125px;
+			text-indent:-9999px;
+			color:#fff;
+			margin-left:70px;
+		}
+	#buttons {
+		text-align:right;
+	}
+		#buttons .long {
+			margin-top:29px;
+			margin-left:43px;
+			float:left;
+			width:234px;
+			height:39px;
+		}
+			#buttons .controlpanel {
+				display:block;
+				background:transparent url(../img/btn-controlpanel.png) no-repeat 0 0;
+				text-indent:-9999px;
+				color:#fff;
+			}
+		#buttons .short {
+			margin-top:36px;
+			float:right;
+			width:84px;
+			height:25px;
+		}
+			#buttons .logout {
+				display:block;
+				background:transparent url(../img/btn-logout.png) no-repeat 0 0;
+				text-indent:-9999px;
+				color:#fff;
+			}
+	
+/* =MainMenu
+-------------------------*/
+#mainmenu {
+	list-style-type:none;
+	height:30px;
+	margin:29px 0 0 0;
+	padding:0;
+	float:right;
+}	
+	#mainmenu li {
+		background:#ebebeb url(../img/menubg.png) repeat-x bottom 0;
+		float:left;
+		height:30px;
+		color:#021129;
+		margin:0 0 0 5px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+		#mainmenu li a {
+			font:normal 14px/30px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+			color:#021129;
+			text-decoration:none;
+		}
+		#mainmenu li a:hover {
+			color:#950000;
+			border-bottom:1px dotted #000;
+			margin-bottom:5px;
+		}
+		#mainmenu li a.current { color:#950000; }
+
+/* =Auctions
+-------------------------*/
+#auctions {
+	margin:0;
+	padding:0;
+}
+	#auctions h2 {
+		display:block;
+		background:#041f4a url(../img/headerbg-right.jpg) no-repeat right 0;
+		height:31px;
+		margin:0 0 10px 0;
+	}
+		#auctions h2 span {
+			display:block;
+			background:transparent url(../img/headerbg-left.jpg) no-repeat left 0;
+			height:41px;
+			font:bold 18px/31px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+			color:#b3c8e8;
+			padding-left:51px;
+			
+		}
+	#browse {
+		text-align:right;
+		font:bold 14px/30px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#041f4a;
+	}
+		#browse p { margin-bottom:10px; }
+		#browse select {
+			margin-left:10px;
+		}
+		#browse input.btn_go {
+			background:transparent url(../img/btn-go.png) no-repeat 0 0;
+			text-indent:-9999px;
+			border:0;
+			display:inline-block;
+			width:62px;
+			height:25px;
+			margin-left:5px;
+		}
+		
+/* =auctions
+-------------------------*/
+#auctions { margin-bottom:20px; }
+	#auctions div.item {
+		background:transparent url(../img/auctionbox.png) no-repeat 0 0;
+		display:block;
+		width:220px;
+		height:349px;
+		border-bottom:1px solid #cdcdcd;
+		margin-bottom:20px;
+		text-align:center;
+		position:relative;
+	}
+	#auctions div.item h3 {
+		margin-bottom:5px;
+		margin-top:6px;
+	}
+		#auctions div.item h3 a {
+			font:bold 18px/18px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+			color:#3a5d94;
+			text-decoration:none;
+		}
+		#auctions div.item h3 a:hover {
+			text-decoration:none;
+			border-bottom:1px solid #3a5d94;
+		}
+	#auctions span.auctiontag {
+		background:transparent url(../img/auctiontag.png) no-repeat center center;
+		display:block;
+		width:80px;
+		height:80px;
+		position:absolute;
+		left:70px;
+		top:209px;
+		z-index:-1;
+	}
+	#auctions span.timeleft {
+		font:bold 30px/30px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#041f4a;
+		text-align:center;
+		display:block;
+		margin:0 0 10px 0;
+		padding:0;
+	}
+	#auctions span.retailprice {
+		font:bold italic 14px/14px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#555;
+		text-align:center;
+		display:block;
+		margin:0 0 10px 0;
+		padding:0;
+	}
+	#auctions span.next_bid_ {
+		font:bold 24px/24px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#f60;
+		text-align:center;
+		display:block;
+		margin:0 0 10px 0;
+		padding:0;
+	}
+	#auctions span.winner_auction_ {
+		font:bold 18px/18px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#3a5d94;
+		text-align:center;
+		display:block;
+		margin:0 0 10px 0;
+		padding:0;
+	}
+	#auctions input.image_btn_ {
+		background:transparent url(../img/btn-bid.png) no-repeat 0 0;
+		text-indent:-9999px;
+		border:0;
+		display:block;
+		float:left;
+		width:62px;
+		height:25px;
+		margin:8px 0 0 38px;
+		line-height:1px;
+	}
+	#auctions span.buy_btn_ {
+		background:transparent url(../img/btn-buyitnow.png) no-repeat center center;
+		border:0;
+		display:block;
+		float:right;
+		width:80px;
+		height:41px;
+		margin:0 19px 0 0;
+	}
+		#auctions span.buy_btn_ a {
+			font:bold 16px/26px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+			color:#041f4a;
+			text-align:center;
+			text-decoration:none;
+			display:block;
+			width:80px;
+			height:41px;
+			margin:15px 0 0 0;
+		}
+
+/* =Winners
+-------------------------*/
+#winners {
+	margin:0;
+	padding:0;
+}
+	#header_3grid {
+		display:block;
+		background:transparent url(../img/header-3grid.png) no-repeat right 0;
+		height:41px;
+		margin:0;
+		font:bold 18px/31px "Helvetica Neue", Helvetica, Arial, Tahoma, Verdana, sans-serif;
+		color:#b3c8e8;
+		padding-left:51px;
+	}
+	#winnerlist {
+		background:#b3c9e8;
+	}
+
+/* =Footer
+-------------------------*/
+#footer {
+	background:#041f4a url(../img/footerbg.png) repeat-x 0 0;
+	text-align:center;
+	margin-bottom:10px;
+	padding:40px 0 0 0;
+}
+	#footer p {
+		color:#fff;
+		font:normal 12px/24px Tahoma, Verdana, Arial, sans-serif;
+		margin:0;
+		padding:0;
+	}
+		#footer p a {
+			color:#fff;
+			text-decoration:none;
+		}
+		#footer p a:hover {
+			border-bottom:1px solid #fff;
+			margin-bottom:3px;
+		}
+	#footer p#statement {
+		width:600px;
+		margin:20px auto;
+	}
